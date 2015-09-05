@@ -8,5 +8,9 @@ gulp.task('elm-init', elm.init)
 gulp.task('elm', ['elm-init'], function () {
   return gulp.src('Bingo.elm')
     .pipe(elm())
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest('./dist/'))
+})
+
+gulp.task('default', ['elm'], function () {
+  gulp.watch('./Bingo.elm', ['elm'])
 })
