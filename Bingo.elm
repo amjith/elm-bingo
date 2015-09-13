@@ -168,7 +168,8 @@ entryForm address model =
           value model.phraseInput,
           name "phrase",
           autofocus True,
-          Utils.onInput address UpdatePhraseInput
+          Utils.onInput address UpdatePhraseInput,
+          Utils.onEnter address Add
         ]
         [],
       input
@@ -176,7 +177,8 @@ entryForm address model =
           placeholder "Points",
           value model.pointsInput,
           name "points",
-          Utils.onInput address UpdatePointsInput
+          Utils.onInput address UpdatePointsInput,
+          Utils.onEnter address Add
         ]
         [],
       button [ class "add", onClick address Add] [text "Add"],
